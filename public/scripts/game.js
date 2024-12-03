@@ -145,17 +145,6 @@
         checkPortal();
     }
 
-    function startTimer() {
-        const timer = setInterval(() => {
-            timeRemaining--;
-            if (timeRemaining <= 0) {
-                clearInterval(timer);
-                alert("Temps écoulé! Vous avez perdu.");
-                window.looseCaptcha();
-            }
-        }, 1000);
-    }
-
     function drawGame() {
         context.clearRect(0, 0, container.width, container.height);
         drawMap();
@@ -181,7 +170,6 @@
     container.height = mapSize * pixel;
     textures.ground.onload = () => drawGame();
     drawGame();
-    startTimer();
 
     setInterval(moveDevil, 3000); // Déplacer le diable toutes les 3 secondes
 })();
