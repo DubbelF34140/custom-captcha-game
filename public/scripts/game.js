@@ -17,8 +17,8 @@
     textures.cat.src = "sprite/humain-sprite.png";
     textures.fish.src = "sprite/princess-sprite.png";
     textures.devil.src = "sprite/devil-sprite.png";
-    textures.star.src = "sprite/star-sprite.png"; // Collectible
-    textures.portal.src = "sprite/portal-sprite.png"; // Portal
+    textures.star.src = "sprite/star-sprite.png";
+    textures.portal.src = "sprite/portal-sprite.png";
 
     let mapSize = 10;
     const pixel = 40;
@@ -43,7 +43,6 @@
             }
         }
 
-        // Assurez-vous que le départ et l'arrivée sont libres
         newMap[catY][catX] = 0;
         newMap[fishY][fishX] = 0;
 
@@ -171,5 +170,5 @@
     textures.ground.onload = () => drawGame();
     drawGame();
 
-    setInterval(moveDevil, 3000); // Déplacer le diable toutes les 3 secondes
+    setInterval(moveDevil, 3000);
 })();

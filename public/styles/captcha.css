@@ -32,10 +32,6 @@ input[type="checkbox"] {
     vertical-align: middle;
 }
 
-.recaptcha-checkbox-focused .recaptcha-checkbox-border,.recaptcha-checkbox-focused .recaptcha-checkbox-spinner-gif {
-    border: 2px solid #4d90fe
-}
-
 /* Supprimer le cadre lorsque la case est validée */
 input[type="checkbox"]:checked:not(.loading) {
     border: none; /* Supprimer la bordure */
@@ -90,7 +86,6 @@ input[type="checkbox"].validated::before {
     animation: animate-checkmark 1s steps(19) forwards; /* Animation steps based on the number of segments */
 }
 
-/* Keyframes for animating the checkmark */
 @keyframes animate-checkmark {
     0% {
         background-position: 0% 0%;
