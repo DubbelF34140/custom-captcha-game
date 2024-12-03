@@ -1,0 +1,217 @@
+.captcha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.box-container {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 310px;
+    padding: 12px 1px 5px 12px;
+}
+
+/* Style de base pour le checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 2px solid #c1c1c1;
+    font-size: 1px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.recaptcha-checkbox-focused .recaptcha-checkbox-border,.recaptcha-checkbox-focused .recaptcha-checkbox-spinner-gif {
+    border: 2px solid #4d90fe
+}
+
+/* Supprimer le cadre lorsque la case est validée */
+input[type="checkbox"]:checked:not(.loading) {
+    border: none; /* Supprimer la bordure */
+    background-color: transparent; /* Fond transparent */
+    transition: border 0.3s ease, background-color 0.3s ease; /* Animation fluide */
+}
+
+/* Animation d'apparition du logo de validation */
+@keyframes validate-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Animation d'apparition du logo de validation */
+@keyframes validate-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Loader circulaire pendant le chargement */
+input[type="checkbox"].loading {
+    background: url('https://www.gstatic.com/recaptcha/api2/loading.gif') no-repeat center center;
+    background-size: 100%;
+    border: none;
+    pointer-events: none;
+}
+
+/* Style lorsque la case est cochée */
+input[type="checkbox"].validated::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    margin-top: -4px;
+    margin-left: -4px;
+    background: url('https://www.gstatic.com/recaptcha/api2/checkmark_sprite.png') no-repeat center center; /* Base64-encoded checkmark sprite */
+    background-size: cover;
+    animation: animate-checkmark 1s steps(19) forwards; /* Animation steps based on the number of segments */
+}
+
+/* Keyframes for animating the checkmark */
+@keyframes animate-checkmark {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 46.1%;
+    }
+}
+
+/* Animation de rotation */
+@keyframes google-spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation d'apparition du loader */
+@keyframes loader-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Texte associé au checkbox */
+.robot {
+    font-size: 14px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-left: 5%;
+}
+
+.logo {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.logo-text {
+    font-size: 10px;
+    color: #666;
+}
+
+.logo-text-tos {
+    font-size: 9px;
+    color: #aaa;
+    text-align: right;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #28a745;
+    display: none;
+}
+
+.feedback.visible {
+    display: block;
+}
+
+.captcha-checkbox-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#captcha-modal.active {
+    display: flex; /* Affiche la modal */
+}
+
+.captcha {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.rc-anchor-normal .rc-anchor-pt {
+    margin: 2px 11px 0 0;
+    padding-right: 2px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 276px;
+}
+
+.rc-anchor-pt span {
+    font-family: Roboto, helvetica, arial, sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    color: #555;
+    display: inline;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+.rc-anchor-pt a {
+    font-family: Roboto, helvetica, arial, sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    color: #555;
+    display: inline;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
